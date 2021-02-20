@@ -16,9 +16,9 @@ export default function Menu() {
           <Translate string={"primeNumber"} />
         </Button>
       </Link>
-      <Link to={"/divisibility"}>
+      <Link to={"/divisors"}>
         <Button variant={theme.btnVariant} m={1}>
-          <Translate string={"divisibility"} />
+          <Translate string={"divisors"} />
         </Button>
       </Link>
     </Center>

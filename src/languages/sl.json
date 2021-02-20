@@ -1,9 +1,11 @@
 {
     "primeNumberChecker": "Peverba Praštevil",
     "primeNumber": "Praštevilo",
-    "divisibility": "Deljivost",
+    "divisors": "Delitelji",
     "yes": "Da",
     "no": "Ne",
     "isPrime": "je praštevilo",
-    "notPrime": "ni praštevilo"
+    "notPrime": "ni praštevilo",
+    "findDivisors": "Poišči Delitelje"
+
 }

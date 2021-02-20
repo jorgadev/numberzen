@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Grid, Spacer, Stack, Switch } from "@chakra-ui/react";
+import { Grid, Spacer, Switch } from "@chakra-ui/react";
 
 import Language from "./Language";
 import { themes } from "../contexts/ThemeContext";
@@ -29,7 +29,9 @@ export default function Navbar({ setLanguage, setTheme }) {
       <Switch
         size="lg"
         isChecked={switchIsChecked}
-        onChange={() => setSwitchIsChecked((prevState) => !prevState)}
+        onChange={() => {
+          setSwitchIsChecked((prevState) => !prevState);
+        }}
       />
       <Spacer />
       <Language setLanguage={setLanguage} />

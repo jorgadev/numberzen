@@ -9,12 +9,14 @@ export default function Language({ setLanguage }) {
       <Flags.US
         onClick={() => {
           setLanguage("en");
+          localStorage.setItem("lang", "en");
         }}
         className="flag"
       />
       <Flags.RS
         onClick={() => {
           setLanguage("rs");
+          localStorage.setItem("lang", "rs");
         }}
         className="flag"
       />
@@ -22,6 +24,7 @@ export default function Language({ setLanguage }) {
         title="Slovenia"
         onClick={() => {
           setLanguage("sl");
+          localStorage.setItem("lang", "sl");
         }}
         className="flag"
       />

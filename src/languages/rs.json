@@ -1,9 +1,10 @@
 {
     "primeNumberChecker": "Provera Prostih Brojeva",
     "primeNumber": "Prost broj",
-    "divisibility": "Deljivost",
+    "divisors": "Delioci",
     "yes": "Da",
     "no": "Ne",
     "isPrime": "je prost broj",
-    "notPrime": "nije prost broj"
+    "notPrime": "nije prost broj",
+    "findDivisors": "Nađi Delioce"
 }

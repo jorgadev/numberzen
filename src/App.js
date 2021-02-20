@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import "./App.scss";
-import { Grid, Spinner } from "@chakra-ui/react";
+import { Grid, Spinner, Fade, useDisclosure } from "@chakra-ui/react";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
 // Import components
@@ -12,7 +12,12 @@ import { LanguageContext } from "./contexts/LanguageContext";
 import { ThemeContext, themes } from "./contexts/ThemeContext";
 
 export default function App() {
-  const [language, setLanguage] = useState("en");
+  let lang = localStorage.getItem("lang");
+  if (!lang) {
+    localStorage.setItem("lang", "en");
+  }
+
+  const [language, setLanguage] = useState(localStorage.getItem("lang"));
   const [isLoading, setIsLoading] = useState(false);
   const [theme, setTheme] = useState(themes.light);
 
@@ -38,19 +43,21 @@ export default function App() {
               className="spinner"
             />
           ) : (
-            <Grid
-              templateRows="10% auto 20%"
-              height="100vh"
-              background={theme.background}
-            >
-              <Navbar setLanguage={setLanguage} setTheme={setTheme} />
-              <Route exact path="/">
-                <Redirect to="/prime-number" />
-              </Route>
-              <Route path="/prime-number" component={PrimeNumber} />
-              <Route path="/divisibility" component={Divisibility} />
-              <Menu />
-            </Grid>
+            <Fade in={true}>
+              <Grid
+                templateRows="10% auto 20%"
+                height="100vh"
+                background={theme.background}
+              >
+                <Navbar setLanguage={setLanguage} setTheme={setTheme} />
+                <Route exact path="/">
+                  <Redirect to="/prime-number" />
+                </Route>
+                <Route path="/prime-number" component={PrimeNumber} />
+                <Route path="/divisors" component={Divisibility} />
+                <Menu />
+              </Grid>
+            </Fade>
           )}
         </ThemeContext.Provider>
       </LanguageContext.Provider>
