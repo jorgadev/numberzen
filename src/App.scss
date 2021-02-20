@@ -1,0 +1,22 @@
+.Number {
+  .prime-number-input {
+    height: auto;
+    width: auto;
+    border: none;
+    outline: none;
+    font-size: 100px;
+    text-align: center;
+    font-weight: 100;
+  }
+}
+
+.Language {
+  .flag {
+    border: 1px solid #f9f9f9;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+  }
+}
