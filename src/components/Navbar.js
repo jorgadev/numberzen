@@ -2,15 +2,26 @@ import React, { useState, useEffect, useContext } from "react";
 import { Grid, Spacer, Stack, Switch } from "@chakra-ui/react";
 
 import Language from "./Language";
-import { ThemeContext, themes } from "../contexts/ThemeContext";
+import { themes } from "../contexts/ThemeContext";
 
 export default function Navbar({ setLanguage, setTheme }) {
-  const [switchIsChecked, setSwitchIsChecked] = useState(false);
+  const darkTheme = localStorage.getItem("dark-theme");
+  if (!darkTheme) {
+    localStorage.setItem("dark-theme", "false");
+  }
 
-  const theme = useContext(ThemeContext);
+  const [switchIsChecked, setSwitchIsChecked] = useState(
+    JSON.parse(localStorage.getItem("dark-theme"))
+  );
 
   useEffect(() => {
-    return switchIsChecked ? setTheme(themes.dark) : setTheme(themes.light);
+    setSwitchIsChecked(JSON.parse(darkTheme));
+  }, []);
+
+  useEffect(() => {
+    return switchIsChecked
+      ? (localStorage.setItem("dark-theme", "true"), setTheme(themes.dark))
+      : (localStorage.setItem("dark-theme", "false"), setTheme(themes.light));
   }, [switchIsChecked]);
 
   return (
