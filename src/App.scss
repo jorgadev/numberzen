@@ -1,3 +1,21 @@
+// Global styles
+.spinner {
+  position: absolute;
+  top: calc(50vh - 70px);
+  left: 50%;
+}
+
+// Components
+.Navbar {
+  .chakra-switch__thumb {
+    background-color: #fff;
+    background: url("./assets/moon.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
 .Number {
   .prime-number-input {
     height: auto;
@@ -14,7 +32,6 @@
       box-shadow: 0 3px 1px -1px #3182ce !important;
     }
   }
-
   .chakra-button {
     display: flex;
     justify-content: center;

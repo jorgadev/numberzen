@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   HStack,
   Button,
@@ -6,10 +6,12 @@ import {
   useNumberInput,
   useToast,
 } from "@chakra-ui/react";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 export default function Number({ setIsPrime, setNumber }) {
   const [value, setValue] = useState(0);
   const toast = useToast();
+  const theme = useContext(ThemeContext);
 
   useEffect(() => {
     setNumber(value);
@@ -79,6 +81,7 @@ export default function Number({ setIsPrime, setNumber }) {
       <Input
         {...input}
         className="prime-number-input"
+        color={theme.color}
         onChange={(e) => {
           if (e.target.value == "") {
             setValue(0);

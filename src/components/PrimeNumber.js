@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Center, Heading } from "@chakra-ui/react";
+
+import { ThemeContext } from "../contexts/ThemeContext";
 
 import Number from "./Number";
 import Translate from "../languages/Translate";
@@ -7,10 +9,11 @@ import Translate from "../languages/Translate";
 export default function PrimeNumber() {
   const [isPrime, setIsPrime] = useState(false);
   const [number, setNumber] = useState(0);
+  const theme = useContext(ThemeContext);
 
   return (
     <Center flexDirection="column">
-      <Heading marginBottom={20}>
+      <Heading marginBottom={20} textAlign="center" color={theme.color}>
         <Translate string={"primeNumberChecker"} />
       </Heading>
       <Number setIsPrime={setIsPrime} setNumber={setNumber} />

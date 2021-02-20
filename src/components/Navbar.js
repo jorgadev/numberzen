@@ -1,24 +1,27 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Grid, Spacer, Stack, Switch } from "@chakra-ui/react";
 
 import Language from "./Language";
+import { ThemeContext, themes } from "../contexts/ThemeContext";
 
-export default function Navbar({ changeLanguage }) {
+export default function Navbar({ setLanguage, setTheme }) {
   const [switchIsChecked, setSwitchIsChecked] = useState(false);
 
+  const theme = useContext(ThemeContext);
+
   useEffect(() => {
-    console.log("change bg");
+    return switchIsChecked ? setTheme(themes.dark) : setTheme(themes.light);
   }, [switchIsChecked]);
 
   return (
-    <Grid className="Navbar" templateColumns="150px auto 120px" p={5}>
+    <Grid className="Navbar" templateColumns="50px auto 120px" p={5}>
       <Switch
         size="lg"
         isChecked={switchIsChecked}
         onChange={() => setSwitchIsChecked((prevState) => !prevState)}
       />
       <Spacer />
-      <Language changeLanguage={changeLanguage} />
+      <Language setLanguage={setLanguage} />
     </Grid>
   );
 }
