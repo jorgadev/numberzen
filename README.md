@@ -4,7 +4,7 @@
 
 Simple project built after watching Web Dev Simplified's course. Includes checker for prime numbers and find divisors functionality. Main point was to sharp react skills and use React Router, Context API and LocalStorage.
 
-_Live demo: [numberzen.netlify.app](https://numberzen.netlify.app/prime-number)_
+_Live demo: [numberzen.netlify.app](https://numberzen.netlify.app)_
 
 ![](header.png)
 
