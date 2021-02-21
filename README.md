@@ -4,7 +4,7 @@
 
 Simple project built after watching Web Dev Simplified's course. Includes checker for prime numbers and find divisors functionality. Main point was to sharp react skills and use React Router, Context API and LocalStorage.
 
-_Live demo: [numberzen.netlify.app](numberzen.netlify.app)_
+_Live demo: [https://numberzen.netlify.app/prime-number](numberzen.netlify.app)_
 
 ![](header.png)
 
@@ -27,7 +27,7 @@ Main idea was to create a simple boilerplate and present usage of React Router a
 
 ## Contributing
 
-1. Fork it (<https://github.com/yourname/yourproject/fork>)
+1. Fork it (<https://github.com/jorgadev/numberzen/fork>)
 2. Create your feature branch (`git checkout -b feature/fooBar`)
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
 4. Push to the branch (`git push origin feature/fooBar`)
