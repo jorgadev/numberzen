@@ -1,10 +1,10 @@
 # Numberzen
 
-> Number analysis with prime number checker and divisors finder included.
+> Number analysis translated in three different languages with light and dark theme.
 
 Simple project built after watching Web Dev Simplified's course. Includes checker for prime numbers and find divisors functionality. Main point was to sharp react skills and use React Router, Context API and LocalStorage.
 
-_Live demo: _
+_Live demo: [numberzen.netlify.app](numberzen.netlify.app)_
 
 ![](header.png)
 
