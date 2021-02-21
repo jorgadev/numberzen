@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import Flags from "country-flag-icons/react/1x1";
 
 import { Grid } from "@chakra-ui/react";

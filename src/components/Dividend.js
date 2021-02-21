@@ -50,13 +50,17 @@ export default function Dividend() {
   };
 
   const showToast = (message) => {
-    return toast({
-      title: "Warning",
-      description: message,
-      status: "warning",
-      isClosable: true,
-      position: "bottom-left",
-    });
+    const id = "unique";
+    if (!toast.isActive(id)) {
+      return toast({
+        id: id,
+        title: "Error",
+        description: message,
+        status: "error",
+        isClosable: true,
+        position: "bottom-left",
+      });
+    }
   };
 
   const {

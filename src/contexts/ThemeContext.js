@@ -3,13 +3,15 @@ import React from "react";
 // Define themes and styles
 export const themes = {
   light: {
-    background: "white",
+    background: "#FFFFFF",
     btnVariant: "outline",
+    particlesColor: "#718096",
   },
   dark: {
-    background: "gray.700",
+    background: "#2D3748",
     color: "white",
     btnVariant: "solid",
+    particlesColor: "#FFFFFF",
   },
 };
 

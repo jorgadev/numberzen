@@ -7,7 +7,9 @@ import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Menu from "./components/Menu";
 import PrimeNumber from "./components/PrimeNumber";
-import Divisibility from "./components/Divisibility";
+import FindDivisors from "./components/FindDivisors";
+import ParticlesBg from "./components/ParticlesBg";
+
 import { LanguageContext } from "./contexts/LanguageContext";
 import { ThemeContext, themes } from "./contexts/ThemeContext";
 
@@ -43,18 +45,21 @@ export default function App() {
               className="spinner"
             />
           ) : (
-            <Fade in={true}>
+            <Fade in={true} className="App">
+              <ParticlesBg />
               <Grid
                 templateRows="10% auto 20%"
                 height="100vh"
-                background={theme.background}
+                backgroundColor="transparent"
+                w
+                className="app-wrapper"
               >
                 <Navbar setLanguage={setLanguage} setTheme={setTheme} />
                 <Route exact path="/">
                   <Redirect to="/prime-number" />
                 </Route>
                 <Route path="/prime-number" component={PrimeNumber} />
-                <Route path="/divisors" component={Divisibility} />
+                <Route path="/divisors" component={FindDivisors} />
                 <Menu />
               </Grid>
             </Fade>
