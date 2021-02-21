@@ -4,6 +4,7 @@ import Flags from "country-flag-icons/react/1x1";
 import { Grid } from "@chakra-ui/react";
 
 export default function Language({ setLanguage }) {
+  // Set language in LS properly and change on icon click
   return (
     <Grid templateColumns="repeat(3, 1fr)" gap={3} className="Language">
       <Flags.US

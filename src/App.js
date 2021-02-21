@@ -14,7 +14,8 @@ import { LanguageContext } from "./contexts/LanguageContext";
 import { ThemeContext, themes } from "./contexts/ThemeContext";
 
 export default function App() {
-  let lang = localStorage.getItem("lang");
+  // Set lang to "en" by default
+  const lang = localStorage.getItem("lang");
   if (!lang) {
     localStorage.setItem("lang", "en");
   }
@@ -23,6 +24,7 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [theme, setTheme] = useState(themes.light);
 
+  // On first load show spinner for 1 second
   useEffect(() => {
     setIsLoading(true);
     let timer = setTimeout(() => setIsLoading(false), 1000);

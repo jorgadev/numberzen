@@ -6,6 +6,7 @@ import {
   useNumberInput,
   useToast,
 } from "@chakra-ui/react";
+
 import { ThemeContext } from "../contexts/ThemeContext";
 
 export default function Number({ setIsPrime, setNumber }) {
@@ -13,6 +14,7 @@ export default function Number({ setIsPrime, setNumber }) {
   const toast = useToast();
   const theme = useContext(ThemeContext);
 
+  // On value change set number to that value and check if prime
   useEffect(() => {
     setNumber(value);
     if (checkIfPrime(value)) {
@@ -22,6 +24,7 @@ export default function Number({ setIsPrime, setNumber }) {
     }
   }, [value]);
 
+  // Check if number is prime number
   const checkIfPrime = (num) => {
     for (let i = 2; i < num; i++) {
       if (num % i === 0) {
@@ -31,6 +34,7 @@ export default function Number({ setIsPrime, setNumber }) {
     return num > 1;
   };
 
+  // Valiadte input and set the state
   const inputNumber = (e) => {
     const re = /^[0-9]+$/g;
     if (e.target.value.match(re)) {
@@ -40,6 +44,7 @@ export default function Number({ setIsPrime, setNumber }) {
     }
   };
 
+  // Change and validate value on button click
   const changeValue = (changer) => {
     if (value > 9998 && changer == 1) {
       setValue(9999);
@@ -49,6 +54,7 @@ export default function Number({ setIsPrime, setNumber }) {
     }
   };
 
+  // Show error messages if input is invalid
   const showToast = (message) => {
     const id = "unique";
     if (!toast.isActive(id)) {
@@ -63,6 +69,7 @@ export default function Number({ setIsPrime, setNumber }) {
     }
   };
 
+  // Chakra UI input props
   const {
     getInputProps,
     getIncrementButtonProps,
@@ -72,7 +79,6 @@ export default function Number({ setIsPrime, setNumber }) {
     value: value,
     min: 0,
   });
-
   const inc = getIncrementButtonProps();
   const dec = getDecrementButtonProps();
   const input = getInputProps();

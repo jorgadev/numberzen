@@ -8,7 +8,6 @@ import {
 } from "@chakra-ui/react";
 
 import Divisors from "./Divisors";
-
 import { ThemeContext } from "../contexts/ThemeContext";
 
 export default function Dividend() {
@@ -17,10 +16,12 @@ export default function Dividend() {
   const toast = useToast();
   const theme = useContext(ThemeContext);
 
+  // On every value change find divisors
   useEffect(() => {
     findDivisors(value);
   }, [value]);
 
+  // Find divisors of number and set the divisors state
   const findDivisors = (number) => {
     const divisorsForNumber = [];
     for (let i = 1; i <= number; i++) {
@@ -31,6 +32,7 @@ export default function Dividend() {
     setDivisors(divisorsForNumber);
   };
 
+  // Validate input
   const inputNumber = (e) => {
     const re = /^[0-9]+$/g;
     if (e.target.value.match(re)) {
@@ -40,6 +42,7 @@ export default function Dividend() {
     }
   };
 
+  // Change value with buttons if valid
   const changeValue = (changer) => {
     if (value > 9998 && changer == 1) {
       setValue(9999);
@@ -49,6 +52,7 @@ export default function Dividend() {
     }
   };
 
+  // Show error toast if input is invalid
   const showToast = (message) => {
     const id = "unique";
     if (!toast.isActive(id)) {
@@ -63,6 +67,7 @@ export default function Dividend() {
     }
   };
 
+  // Chakra UI input props
   const {
     getInputProps,
     getIncrementButtonProps,

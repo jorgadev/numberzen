@@ -1,11 +1,4 @@
 // Global styles
-.spinner {
-  position: absolute;
-  top: calc(50vh - 70px);
-  left: 50%;
-}
-
-// Components
 .App {
   position: relative;
   .app-wrapper {
@@ -17,7 +10,14 @@
   }
 }
 
-.Particles {
+.spinner {
+  position: absolute;
+  top: calc(50vh - 70px);
+  left: 50%;
+}
+
+// Components
+.ParticlesBg {
   height: 100vh;
 }
 

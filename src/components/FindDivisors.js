@@ -1,10 +1,9 @@
 import React, { useState, useContext } from "react";
 import { Center, Heading } from "@chakra-ui/react";
 
-import { ThemeContext } from "../contexts/ThemeContext";
-
 import Dividend from "./Dividend";
 import Translate from "../languages/Translate";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 export default function Divisibility() {
   const theme = useContext(ThemeContext);

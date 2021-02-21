@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-
 import { Center, Button } from "@chakra-ui/react";
 
 import Translate from "../languages/Translate";
