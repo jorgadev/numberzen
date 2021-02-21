@@ -1,6 +1,6 @@
 # Numberzen
 
-> Number analysis translated in three different languages with light and dark theme.
+> Number analysis translated in three different languages with light and dark theme
 
 Simple project built after watching Web Dev Simplified's course. Includes checker for prime numbers and find divisors functionality. Main point was to sharp react skills and use React Router, Context API and LocalStorage.
 
